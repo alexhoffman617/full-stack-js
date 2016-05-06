@@ -3,8 +3,6 @@ var _DEFAULT_PORT = 3001;
 var express = require('express');
 var path = require('path');
 
-
-
 var index = require('./routes/index.js');
 
 var app = express();
@@ -15,9 +13,11 @@ app.engine('html', require('ejs').renderFile);
 
 
 app.use('/', index);
-app.use('/vendor/angular2', express.static('./node_modules/angular2'));
 app.use('/public', express.static('./public'));
-require('./server/controller.js')(app);
+app.use('/components', express.static('./public/components'));
+app.use('/frontEndServices', express.static('./public/frontEndServices'));
+app.use('/vendor', express.static('./node_modules'));
+require('./server/controllers/loginController.js')(app);
 
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

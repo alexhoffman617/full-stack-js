@@ -1,0 +1,18 @@
+<section>
+    <h4>Register</h4>
+    <div layout="column" ng-cloak class="md-inline-form">
+        <md-content layout-gt-sm="row" layout-padding>
+            <div>
+                <md-input-container>
+                    <label>Username</label>
+                    <input ng-model="register.username">
+                </md-input-container>
+                <md-input-container>
+                    <label>Password</label>
+                    <input ng-model="register.password">
+                </md-input-container>
+                <md-button class="md-raised" ng-click="register.register(register.username, register.password)">Register</md-button>
+            </div>
+        </md-content>
+    </div>
+</section>
