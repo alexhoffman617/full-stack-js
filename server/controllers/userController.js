@@ -1,5 +1,5 @@
 var userControllerPath = '/api/users/'
-var loginService = require("../services/loginService.js")
+var loginService = require("../services/userService.js")
 
 module.exports = function(app) {
     app.get(userControllerPath + ":username/:password", function (req, res) {

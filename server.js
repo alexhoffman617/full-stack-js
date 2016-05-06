@@ -17,7 +17,7 @@ app.use('/public', express.static('./public'));
 app.use('/components', express.static('./public/components'));
 app.use('/frontEndServices', express.static('./public/frontEndServices'));
 app.use('/vendor', express.static('./node_modules'));
-require('./server/controllers/loginController.js')(app);
+require('./server/controllers/userController.js')(app);
 
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
